@@ -8,8 +8,8 @@ services:
 before_install: 
     - docker build -t morrislouq/sample-app -f Dockerfile.dev .
 script:     
-    - docker run -e CI=true morrislouq/sample-app npm run test -- 
---coverage --watchAll=false
+    - docker run -e CI=true morrislouq/sample-app npm run test -- --coverage --watchAll=false
+
 
 deploy:
   provider: elasticbeanstalk
